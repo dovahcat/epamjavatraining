@@ -2,8 +2,8 @@ package com.epam.lizaveta_naumovich.java.lesson1.task2;
 
 public class Homogeneity {
     public String text;
-    public String wordsExt[];
-    public char lettersExt[];
+    public String words[];
+    public char letters[];
 
     public static void main(String[] args) {
         Homogeneity app = new Homogeneity();
@@ -25,14 +25,10 @@ public class Homogeneity {
     }
 
     public void splitString() {
-        String words[] = text.split(" ");
-        wordsExt = words;
-        for (String word1 : words) {
-            char letters[] = word1.toCharArray();
-            lettersExt = letters;
+        words = text.split(" ");
+        for (String word : words) {
+            letters = word.toCharArray();
         }
-
-
     }
 
 
