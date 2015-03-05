@@ -13,7 +13,7 @@ public class Homogeneity {
     public void runApplication() {
         formString();
         printString();
-        splitString();
+        splitAndCompare();
     }
 
     public void formString() {
@@ -24,13 +24,22 @@ public class Homogeneity {
         System.out.println(text);
     }
 
-    public void splitString() {
+    public void splitAndCompare() {
         words = text.split(" ");
         for (String word : words) {
             letters = word.toCharArray();
+            compareLetters(0, letters.length);
         }
     }
 
+    public void compareLetters(int i, int j) {
+        for(j = i + 1; j < letters.length; j++) {
+            if (letters[i] == letters[j]) {
+                System.out.print(letters[i]);
+                break;
+            }
+        }
+    }
 
 
 }
