@@ -10,6 +10,7 @@ public class Calculator {
     public String b;
     public float result;
     public int index;
+    //kekeke
 
     public static void main(String[] args) {
         Calculator app = new Calculator();
