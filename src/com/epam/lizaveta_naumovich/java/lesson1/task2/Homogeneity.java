@@ -4,6 +4,7 @@ public class Homogeneity {
     public String text;
     public String words[];
     public char letters[];
+    public boolean repeat;
 
     public static void main(String[] args) {
         Homogeneity app = new Homogeneity();
@@ -17,7 +18,7 @@ public class Homogeneity {
     }
 
     public void formString() {
-        text = "aab abb abc aaa bca cab ccc";
+        text = "olelrlalsld aaaa tyrui";
     }
 
     public void printString() {
@@ -28,15 +29,21 @@ public class Homogeneity {
         words = text.split(" ");
         for (String word : words) {
             letters = word.toCharArray();
-            compareLetters(0, letters.length);
+            compareLetters();
+            System.out.print("--- ");
         }
     }
 
-    public void compareLetters(int i, int j) {
-        for(j = i + 1; j < letters.length; j++) {
-            if (letters[i] == letters[j]) {
-                System.out.print(letters[i]);
-                break;
+    public void compareLetters() {
+        int count = 0;
+        for (int i = 0; i < letters.length; i++) {
+            for(int j = i + 1; j < letters.length; j++) {
+                if (letters[i] == letters[j]) {
+                    System.out.print(letters[i]);
+                    repeat = true;
+                    break;
+                }
+                else { repeat = false; }
             }
         }
     }
